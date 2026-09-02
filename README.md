@@ -1,8 +1,9 @@
 # label-maker-builder
 
 A [Claude Code](https://claude.com/claude-code) skill that generates a
-customized Windows label-printing desktop app (Python/tkinter + pywin32,
-direct-to-printer GDI).
+customized Windows label-printing desktop app, written in Python. The app
+talks directly to the Windows printing system, so labels print at exact
+size with no scaling and no print dialogs to click through.
 
 ![The origin app (TRI Label Maker) that generation adapts: entry rows on the left, live WYSIWYG preview on the right](screenshot.png)
 
@@ -44,5 +45,25 @@ CLAUDE.md so future Claude Code sessions understand it.
 
 ## Requirements (for the generated app)
 
-- Windows (printing is raw GDI via pywin32)
-- Python 3.10+ and `pip install pywin32`
+- **Windows** — the app prints by talking directly to Windows' own printing
+  machinery, which doesn't exist on Mac or Linux.
+- **Python 3.10 or newer** — the free programming language the app is
+  written in. If you don't have it, get it from
+  [python.org/downloads](https://www.python.org/downloads/) (during install,
+  check the box that says *"Add Python to PATH"*).
+- **The pywin32 add-on** — a free extension package that lets Python
+  programs use Windows features such as printers. Python doesn't include it
+  out of the box, so it's installed once with `pip`, Python's built-in
+  package installer. To install it: open a command window (press the
+  Windows key, type `cmd`, press Enter) and type:
+
+  ```
+  pip install pywin32
+  ```
+
+  `pip` downloads the package from the official Python package library and
+  sets it up — that's the whole step. Without pywin32 the app still opens
+  and you can design labels; only printing is unavailable.
+
+Don't worry about memorizing any of this: when you run the skill, it checks
+for Python and pywin32 itself and offers to install what's missing.
