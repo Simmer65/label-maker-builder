@@ -45,6 +45,11 @@ CLAUDE.md so future Claude Code sessions understand it.
 
 ## Requirements (for the generated app)
 
+> [!TIP]
+> **You don't need to install any of this yourself.** When you run the
+> skill, it checks for Python and pywin32 and offers to install whatever is
+> missing. The list below just explains what those pieces are.
+
 - **Windows** — the app prints by talking directly to Windows' own printing
   machinery, which doesn't exist on Mac or Linux.
 - **Python 3.10 or newer** — the free programming language the app is
@@ -64,6 +69,3 @@ CLAUDE.md so future Claude Code sessions understand it.
   `pip` downloads the package from the official Python package library and
   sets it up — that's the whole step. Without pywin32 the app still opens
   and you can design labels; only printing is unavailable.
-
-Don't worry about memorizing any of this: when you run the skill, it checks
-for Python and pywin32 itself and offers to install what's missing.
