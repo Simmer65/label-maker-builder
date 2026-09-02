@@ -23,13 +23,31 @@ The generated app prints Avery-style file-folder label sheets on 4x6 media
 
 ## Installing the skill
 
-Copy this folder into your Claude Code skills directory:
+A *skill* is a set of instruction files that [Claude
+Code](https://claude.com/claude-code) (Anthropic's AI coding assistant)
+reads to learn how to do a particular job — this one teaches it how to
+build the label app. Installing a skill just means putting its files in a
+folder where Claude Code looks for them:
 
-- **Per project**: `<your project>\.claude\skills\label-maker-builder\`
-- **All projects**: `%USERPROFILE%\.claude\skills\label-maker-builder\`
+1. **Download the files.** On this page, click the green **Code** button
+   (near the top), choose **Download ZIP**, then right-click the downloaded
+   ZIP and pick **Extract All**. Inside is a folder containing `SKILL.md`
+   and the rest of these files.
+2. **Open your skills folder.** Press the Windows key + R, paste
+   `%USERPROFILE%\.claude\skills` and press Enter. (`%USERPROFILE%` is
+   Windows shorthand for your own user folder, e.g. `C:\Users\yourname`.)
+   If Windows says the folder doesn't exist, create it: in File Explorer go
+   to your user folder, make a folder named `.claude`, and inside it one
+   named `skills`.
+3. **Copy the extracted folder in**, and make sure it's named
+   `label-maker-builder`, so `SKILL.md` ends up at
+   `%USERPROFILE%\.claude\skills\label-maker-builder\SKILL.md`.
+
+That location makes the skill available in every project. (If you'd rather
+limit it to one project, use `<that project>\.claude\skills\` instead.)
 
 Then, in Claude Code, ask something like *"build me a label printing app"*
-or invoke it directly with `/label-maker-builder`. The skill interviews you
+or invoke it directly by typing `/label-maker-builder`. The skill interviews you
 (sheet geometry, app name, theme, default font, presets), verifies Python
 and pywin32, then generates a complete project you own — with its own
 CLAUDE.md so future Claude Code sessions understand it.
