@@ -4,6 +4,8 @@ A [Claude Code](https://claude.com/claude-code) skill that generates a
 customized Windows label-printing desktop app (Python/tkinter + pywin32,
 direct-to-printer GDI).
 
+![The origin app (TRI Label Maker) that generation adapts: entry rows on the left, live WYSIWYG preview on the right](screenshot.png)
+
 The generated app prints Avery-style file-folder label sheets on 4x6 media
 (or any sheet geometry you describe) with:
 
